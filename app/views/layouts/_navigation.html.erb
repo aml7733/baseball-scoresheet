@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <% if !current_user %>
+      <%= link_to "Sign In", new_user_session_path, class: "item" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "item" %>
+    <% else %>
+      <div class="active item">Signed in as <%= current_user.email %></div>
+      <!-- <%= link_to "My Scoresheets", user_buckets_path(current_user), class: "item" %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "item" %> -->
+    <% end %>
+  </ul>
+</nav>
